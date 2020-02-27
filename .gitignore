@@ -1,2 +1,15 @@
+.idea/*
+.git/*
+target/
+node/node_modules/**
+out/.*
+out/bundle.js
+out/scanimation.js
+out/scanimation.js.map
+out/styles.css
+out/timestamp.txt
 *.class
-*.log
+*.sjsir
+
+ignore.json
+ignore.txt
