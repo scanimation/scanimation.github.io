@@ -1,0 +1,26 @@
+@import "less/color";
+@import "less/size";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: @grey200;
+}
+
+#wispy {
+  display: initial !important;
+  @import "less/common";
+  @import "less/text";
+  @import "less/button";
+  @import "less/overlay";
+  @import "less/section";
+
+  @import "less/background";
+  @import "less/offscreen";
+  @import "less/loading";
+  @import "less/content";
+  @import "less/frames-loading-overlay";
+}

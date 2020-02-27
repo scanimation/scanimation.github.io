@@ -1,0 +1,31 @@
+#frames-controls {
+  .hbox();
+  justify-content: flex-end;
+  margin-top: -1.5rem;
+
+  > button:first-child {
+    margin: 0;
+  }
+
+  > button {
+    margin: 0 0 0 @padSmall;
+  }
+
+  #frames-show {
+    .stopped {
+      display: none;
+    }
+
+    .playing {
+      display: none;
+    }
+
+    &.stopped > .stopped {
+      display: initial;
+    }
+
+    &.playing > .playing {
+      display: initial;
+    }
+  }
+}

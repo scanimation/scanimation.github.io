@@ -1,0 +1,616 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #eeeeee;
+}
+#wispy {
+  display: initial !important;
+}
+#wispy .vbox {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#wispy .hbox {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+#wispy .cbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#wispy .fill {
+  flex-grow: 1;
+}
+#wispy .shadow {
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+#wispy .shadow-soft {
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+}
+#wispy .clear-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#wispy .disable-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+#wispy span,
+#wispy input,
+#wispy select,
+#wispy p {
+  font-size: 1.25rem;
+  font-family: Roboto, serif;
+  margin: 0;
+}
+#wispy button {
+  transition-duration: 100ms;
+  border: 0;
+  outline: 0;
+  padding: 0 1.25rem 0 1.25rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+}
+#wispy button:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+#wispy button:active {
+  background-color: #e0e0e0;
+  padding: 0 1.25rem 0 1.25rem;
+}
+#wispy button:disabled {
+  cursor: auto;
+  background-color: #bdbdbd;
+}
+#wispy button:disabled > i {
+  color: #eeeeee;
+}
+#wispy button:disabled > span {
+  color: #eeeeee;
+}
+#wispy button.primary {
+  background-color: #2196f3;
+}
+#wispy button.primary:hover {
+  background-color: #51adf6;
+}
+#wispy button.primary:active {
+  background-color: #0c7cd5;
+}
+#wispy button.primary:disabled {
+  cursor: auto;
+  background-color: #bdbdbd;
+}
+#wispy button.primary:disabled > i {
+  color: #eeeeee;
+}
+#wispy button.primary:disabled > span {
+  color: #eeeeee;
+}
+#wispy button.primary > i {
+  font-size: 1.5rem;
+  color: white;
+}
+#wispy button.primary > span {
+  color: white;
+}
+#wispy button.round {
+  width: 3rem;
+  border-radius: 3rem;
+}
+#wispy button.round > i {
+  font-size: 2rem;
+}
+#wispy button.help {
+  padding: 2px;
+  font-size: 1.25rem;
+  color: #9e9e9e;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#wispy button.help:hover {
+  background-color: #e0e0e0;
+  color: black;
+}
+#wispy button > i {
+  font-size: 1.5rem;
+  color: black;
+}
+#wispy button > span {
+  font-size: 1.25rem;
+  margin: 0 0 0 0.5rem;
+  color: black;
+}
+#wispy button > span:first-child {
+  margin: 0;
+}
+#wispy .overlay {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#wispy .overlay > div {
+  padding: 1.25rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  flex: 0 0 25rem;
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+#wispy .overlay > div .overlay-header {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+#wispy .overlay > div .overlay-header .overlay-close {
+  padding: 2px;
+  font-size: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0;
+  background-color: white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#wispy .overlay > div .overlay-header .overlay-close > i {
+  color: #9e9e9e;
+}
+#wispy .overlay > div .overlay-header .overlay-close:hover > i {
+  color: black;
+}
+#wispy .overlay > div .overlay-title {
+  font-size: 1.5rem;
+}
+#wispy .overlay > div .overlay-content {
+  padding: 1.25rem 0 1.25rem 0;
+}
+#wispy .overlay > div .overlay-content p {
+  color: #616161;
+}
+#wispy .overlay > div .overlay-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+#wispy .overlay > div .overlay-controls button {
+  padding: 0.75rem;
+  margin: 0 0 0 0.75rem;
+  background-color: white;
+  height: inherit;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#wispy .overlay > div .overlay-controls button:hover {
+  background-color: #e3f2fd;
+}
+#wispy .overlay > div .overlay-controls button:active {
+  background-color: #bbdefb;
+}
+#wispy .overlay > div .overlay-controls button:disabled:hover {
+  background-color: #eeeeee;
+}
+#wispy .overlay > div .overlay-controls button:disabled > span {
+  color: #9e9e9e;
+}
+#wispy .overlay > div .overlay-controls button span {
+  color: #2196f3;
+}
+#wispy .section {
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#wispy .section > div:first-child {
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+}
+#wispy .section > div:first-child > span {
+  flex-grow: 1;
+  font-size: 1.5rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+#wispy .section > div:first-child > button {
+  margin: -1.5rem 0 -1.5rem 0.5rem;
+}
+#wispy .section > * {
+  margin: 0.75rem 0 0 0;
+}
+#wispy #background {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12rem;
+  background-color: #1565c0;
+}
+#wispy #offscreen {
+  position: absolute;
+  left: 10000px;
+}
+#wispy #offscreen * {
+  position: absolute;
+  left: 10000px;
+}
+#wispy #loading {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#wispy #content {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+#wispy #content > *:first-child {
+  margin: 1.25rem;
+}
+#wispy #content > * {
+  margin: 1.25rem 1.25rem 1.25rem 0;
+}
+#wispy #content .menu {
+  flex: 0 0 24rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#wispy #content .menu > *:first-child {
+  margin: 0;
+}
+#wispy #content .menu > * {
+  margin: 1.25rem 0 0 0;
+}
+#wispy #content .menu #frames-section {
+  flex-grow: 1;
+}
+#wispy #content .menu #frames-section #frames-dropzone {
+  flex-grow: 1;
+  border: 2px dashed #2196f3;
+  border-radius: 0.5rem;
+  background-color: #e3f2fd;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#wispy #content .menu #frames-section #frames-dropzone:hover {
+  background-color: white;
+}
+#wispy #content .menu #frames-section #frames-dropzone.dropping {
+  background-color: #bbdefb;
+}
+#wispy #content .menu #frames-section #frames-dropzone.dropping > span {
+  display: none;
+}
+#wispy #content .menu #frames-section #frames-dropzone.dropping > i {
+  display: initial;
+}
+#wispy #content .menu #frames-section #frames-dropzone > span {
+  display: initial;
+  font-size: 1.25rem;
+  color: #2196f3;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+#wispy #content .menu #frames-section #frames-dropzone > i {
+  display: none;
+  color: white;
+  font-size: 3rem;
+}
+#wispy #content .menu #frames-section #frames-list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #eeeeee;
+}
+#wispy #content .menu #frames-section #frames-list > div {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+  cursor: pointer;
+  height: 2.5rem;
+  background-color: white;
+  border-width: 2px 0 0 0;
+  border-color: #eeeeee;
+  border-style: solid;
+  transition-duration: 100ms;
+}
+#wispy #content .menu #frames-section #frames-list > div:hover {
+  background-color: #eeeeee;
+}
+#wispy #content .menu #frames-section #frames-list > div:active {
+  background-color: #e0e0e0;
+}
+#wispy #content .menu #frames-section #frames-list > div.selected {
+  cursor: auto;
+  background-color: #eeeeee;
+}
+#wispy #content .menu #frames-section #frames-list > div.selected:active {
+  background-color: #eeeeee;
+}
+#wispy #content .menu #frames-section #frames-list > div.selected > button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#wispy #content .menu #frames-section #frames-list > div > span,
+#wispy #content .menu #frames-section #frames-list > div > i {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  margin: 0 0 0 0.75rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+#wispy #content .menu #frames-section #frames-list > div > span.index,
+#wispy #content .menu #frames-section #frames-list > div > i.index {
+  color: #757575;
+}
+#wispy #content .menu #frames-section #frames-list > div button {
+  display: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0;
+  width: 2rem;
+  height: 2.5rem;
+}
+#wispy #content .menu #frames-section #frames-list > div button:hover {
+  background-color: #e0e0e0;
+}
+#wispy #content .menu #frames-section #frames-list > div button i {
+  color: black;
+  font-size: 1.5rem;
+}
+#wispy #content .menu #frames-section #frames-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-end;
+  margin-top: -1.5rem;
+}
+#wispy #content .menu #frames-section #frames-controls > button:first-child {
+  margin: 0;
+}
+#wispy #content .menu #frames-section #frames-controls > button {
+  margin: 0 0 0 0.5rem;
+}
+#wispy #content .menu #frames-section #frames-controls #frames-show .stopped {
+  display: none;
+}
+#wispy #content .menu #frames-section #frames-controls #frames-show .playing {
+  display: none;
+}
+#wispy #content .menu #frames-section #frames-controls #frames-show.stopped > .stopped {
+  display: initial;
+}
+#wispy #content .menu #frames-section #frames-controls #frames-show.playing > .playing {
+  display: initial;
+}
+#wispy #content .menu #settings-section input,
+#wispy #content .menu #settings-section select {
+  width: 60px;
+  padding: 2px;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+  border-color: #bdbdbd;
+  border-width: 0 0 2px 0;
+}
+#wispy #content .menu #settings-section input.bad,
+#wispy #content .menu #settings-section select.bad {
+  background-color: #ffcdd2;
+  border-color: #f44336;
+}
+#wispy #content .menu #settings-section input {
+  text-align: center;
+}
+#wispy #content .menu #settings-section select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+#wispy #content .menu #settings-section select option {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  padding: 0;
+  margin: 0;
+}
+#wispy #content .menu #settings-section .settings-row {
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+}
+#wispy #content .menu #settings-section .settings-row span {
+  padding: 2px;
+}
+#wispy #content .menu #settings-section .settings-row > *:first-child {
+  display: inline-block;
+  width: 8rem;
+  margin: 0;
+}
+#wispy #content .menu #settings-section .settings-row > * {
+  margin: 0 0 0 0.5rem;
+}
+#wispy #content .menu #results-section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+#wispy #content .menu #results-section button:first-child {
+  margin: 0;
+}
+#wispy #content .menu #results-section button {
+  margin: 0 0 0 0.5rem;
+}
+#wispy #content .menu #results-section #scanimation-image,
+#wispy #content .menu #results-section #scanimation-grid {
+  flex-grow: 1;
+}
+#wispy #content .menu #results-section #scanimation-play .stopped {
+  display: none;
+}
+#wispy #content .menu #results-section #scanimation-play .playing {
+  display: none;
+}
+#wispy #content .menu #results-section #scanimation-play.stopped > .stopped {
+  display: initial;
+}
+#wispy #content .menu #results-section #scanimation-play.playing > .playing {
+  display: initial;
+}
+#wispy #content #main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#wispy #content #main #preview-section {
+  flex-grow: 1;
+}
+#wispy #content #main #preview-section #preview-wrapper {
+  flex-grow: 1;
+  background-color: #eeeeee;
+}
+#wispy #content #main #preview-section #preview-wrapper #preview {
+  position: absolute;
+}
+#wispy #frames-loading-overlay > div {
+  flex: 0 0 30rem;
+}
+#wispy #frames-loading-overlay #frames-loading-list {
+  max-height: 20rem;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+}
+#wispy #frames-loading-overlay #frames-loading-list .row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row i {
+  flex: 0 0 2rem;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .name-wrapper {
+  flex: 0 0 25rem;
+  max-width: 25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .break {
+  flex-basis: 100%;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .description {
+  margin: 0 0 0 2rem;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .loading {
+  display: none;
+  color: #9e9e9e;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .success {
+  display: none;
+  color: #4caf50;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row .failure {
+  display: none;
+  color: #f44336;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row.loading > .loading {
+  display: initial;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row.success > .success {
+  display: initial;
+}
+#wispy #frames-loading-overlay #frames-loading-list .row.failure > .failure {
+  display: initial;
+}

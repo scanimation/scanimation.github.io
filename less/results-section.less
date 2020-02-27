@@ -1,0 +1,33 @@
+#results-section {
+  .hbox();
+
+  button:first-child {
+    margin: 0;
+  }
+
+  button {
+    margin: 0 0 0 @padSmall;
+  }
+
+  #scanimation-image, #scanimation-grid {
+    .fill();
+  }
+
+  #scanimation-play {
+    .stopped {
+      display: none;
+    }
+
+    .playing {
+      display: none;
+    }
+
+    &.stopped > .stopped {
+      display: initial;
+    }
+
+    &.playing > .playing {
+      display: initial;
+    }
+  }
+}
