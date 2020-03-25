@@ -618,3 +618,69 @@ body {
 #wispy #frames-loading-overlay #frames-loading-list .row.failure > .failure {
   display: initial;
 }
+#wispy .help-overlay .overlay-content {
+  overflow-y: scroll;
+  max-height: 34rem;
+  min-width: 37rem;
+  margin-left: -0.5rem;
+  padding: 0.5rem !important;
+}
+#wispy .help-overlay b {
+  font-weight: normal;
+  color: #2196f3;
+}
+#wispy .help-overlay .good {
+  color: #4caf50 !important;
+}
+#wispy .help-overlay .bad {
+  color: #f44336;
+}
+#wispy .help-overlay i {
+  font-size: 2rem;
+}
+#wispy .help-overlay p {
+  margin-top: 0 !important;
+}
+#wispy .help-overlay .description {
+  margin-left: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+#wispy .help-v {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#wispy .help-v > * {
+  margin-bottom: 0.75rem !important;
+}
+#wispy .help-h {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-items: center;
+}
+#wispy .help-h > * {
+  margin-left: 0.5rem;
+}
+#wispy .help-h > *:first-child {
+  margin-left: 0;
+}
+#wispy .help-image {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  background-color: #e0e0e0;
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+#wispy .help-image > * {
+  margin: 0 0.25rem 0 0 !important;
+}
