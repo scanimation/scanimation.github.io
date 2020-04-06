@@ -1,0 +1,137 @@
+@import "/less/common";
+@import "/less/color";
+@import "/less/size";
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: @grey900;
+}
+
+p, span, div {
+  font-size: @textMedium;
+  font-family: Roboto, serif;
+  margin: 0;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.content {
+  .hbox();
+  justify-content: center;
+}
+
+.prefix {
+  color: @blue500;
+}
+
+.suffix {
+  color: @green500;
+}
+
+.timeline {
+  height: 3px;
+  background-color: @blue800;
+  margin-top: -7.5rem;
+  margin-bottom: 7.5rem;
+}
+
+.structure {
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+
+  span {
+    font-size: 5rem;
+  }
+}
+
+.part1 {
+  width: 20rem;
+  z-index: 1000;
+  background-color: @grey800;
+  border-radius: @padSmall;
+  .shadow();
+  padding: @padLarge 0;
+  margin: @padLarge;
+  .vbox();
+  align-items: stretch;
+
+  .timeline {
+    margin-top: -1.1rem;
+    margin-bottom: 1.1rem;
+    background-color: @blue500;
+  }
+
+  .name {
+    color: @blue500;
+    font-size: @textLarge;
+    text-align: center;
+  }
+
+  .time {
+    text-align: center;
+    margin-top: @padMedium;
+    margin-bottom: @padMedium;
+
+    i {
+      color: @blue500;
+      font-size: @iconLarge;
+    }
+  }
+
+  .modifier {
+    color: white;
+    text-align: center;
+    font-size: @textSmall;
+  }
+
+  .point {
+    p {
+      color: @grey600;
+      text-align: center;
+      font-size: @textMedium;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: @grey700;
+
+    .name {
+      color: @blue300;
+    }
+
+    .timeline {
+      background-color: @blue300;
+    }
+
+    .time > i {
+      color: @blue300;
+    }
+
+    .point > p {
+      color: white;
+    }
+  }
+}
+
+.part2 {
+  width: 30rem;
+  .shadow();
+  padding: @padLarge 0;
+  margin: 0 -3.7rem;
+  background-color: rgba(1, 1, 1, 0.1);
+  border-radius: @padSmall;
+}
